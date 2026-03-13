@@ -1,37 +1,41 @@
 # 🎛️ DSP Lab 1: First Contact & The Building Blocks (Hello DSP!)
 
-ยินดีต้อนรับสู่ Lab สัปดาห์แรกของการเรียนรู้ Digital Signal Processing (DSP) ด้วย Python! 
-ใน Lab นี้เราจะเริ่มต้นจากการทำความรู้จักเครื่องมือ สร้างสัญญาณพื้นฐานด้วยมือของเราเอง และเรียนรู้ว่าสัญญาณในโลกแห่งความเป็นจริงนั้นหน้าตาเป็นอย่างไร
+ยินดีต้อนรับสู่ภารกิจแรกของการเรียนรู้ Digital Signal Processing (DSP) ด้วย Python! 
+ในสัปดาห์นี้เราจะมาทำลายกำแพงความกลัวคณิตศาสตร์ ทำความรู้จักเครื่องมือระดับสากล และสร้างสัญญาณคลื่นเสียงด้วยมือของคุณเอง
 
-## 🎯 วัตถุประสงค์การเรียนรู้ (Learning Objectives)
-1. สามารถใช้งาน Google Colab และ Library พื้นฐาน (`numpy`, `matplotlib`) ได้
-2. เข้าใจและสามารถเขียนโค้ดเพื่อสร้างสัญญาณพื้นฐาน (Sine Wave, Square Wave) ได้
-3. เข้าใจแนวคิดของ Sampling Rate และผลกระทบต่อสัญญาณดิจิทัล
-4. สามารถจำลองสัญญาณรบกวน (Noise) และรวมเข้ากับสัญญาณหลักได้
-
-## 🛠️ สิ่งที่ต้องเตรียมพร้อม (Prerequisites)
-- บัญชี Google Account (สำหรับการเข้าใช้ Google Colab)
-- ความรู้พื้นฐานภาษา Python (Variables, Loops, Functions)
-
-## 📝 ขั้นตอนการปฏิบัติงาน (Standard Operating Procedure - SOP)
-
-**Phase 1: การเตรียม Environment**
-1. คลิกที่ปุ่มด้านล่างเพื่อเปิดไฟล์ Jupyter Notebook ของ Lab นี้บน Google Colab
-   [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/KMUTT-Lab/DSP01/blob/main/Lab01_HelloDSP.ipynb)
-2. เมื่อหน้า Colab เปิดขึ้นมา ให้คลิกที่เมนู `File` > `Save a copy in Drive` เพื่อสร้างสำเนาเป็นของตัวเอง
-3. เปลี่ยนชื่อไฟล์สำเนาโดยเพิ่มรหัสนักศึกษาไว้ด้านหน้า เช่น `67XXXXXXX_Lab1_HelloDSP.ipynb`
-
-**Phase 2: การทำ Lab**
-1. **รันเซลล์โค้ดตามลำดับ:** ให้อ่านคำอธิบายใน Text cell และรัน Code cell ทีละบล็อก (กด `Shift + Enter`)
-2. **เติมโค้ดในส่วนที่ขาดหาย:** ในไฟล์จะมีจุดที่เขียนว่า `### YOUR CODE HERE ###` ให้นักศึกษาเขียนโค้ด Python เพื่อแก้โจทย์ตามเงื่อนไขที่กำหนด
-3. **สังเกตผลลัพธ์:** ตรวจสอบกราฟและฟังเสียงที่ได้จากการรันโค้ด หากเกิด Error ให้พยายามอ่าน Error Message และแก้ไข
-
-**Phase 3: การส่งงาน (Submission)**
-เมื่อทำ Lab เสร็จสิ้นและตรวจสอบผลลัพธ์เรียบร้อยแล้ว:
-1. ไปที่เมนู `File` > `Save a copy in GitHub`
-2. เลือก Repository ที่กำหนดให้สำหรับวิชานี้ (หากใช้ GitHub Classroom ระบบจะสร้าง Repo ไว้ให้แล้ว)
-3. ในช่อง Commit message ให้พิมพ์ `Completed Lab 1`
-4. ตรวจสอบในหน้า GitHub ของตนเองว่าไฟล์ถูก Push ขึ้นไปเรียบร้อยแล้ว
+## 🎯 วัตถุประสงค์การเรียนรู้
+1. คุ้นเคยกับสภาพแวดล้อมการเขียนโค้ดบน Google Colab และการใช้ไลบรารีพื้นฐาน (`numpy`, `matplotlib`)
+2. เข้าใจและสามารถเขียนโค้ดสร้างสัญญาณ (Signal Generation) เช่น Sine Wave ได้
+3. เข้าใจผลกระทบของ Sampling Rate ที่มีต่อสัญญาณดิจิทัลและเสียง
+4. จำลองสัญญาณรบกวน (Noise) ในโลกความเป็นจริงได้
 
 ---
+
+## 🚦 ลำดับขั้นตอนการทำภารกิจ (Mission Flow)
+
+### Step 0: เตรียมฐานทัพ (Prerequisites)
+หากคุณยังไม่มีบัญชี GitHub หรือยังไม่เคยสร้าง Repository สำหรับเก็บงานวิชานี้ ให้หยุดอ่านตรงนี้ แล้วไปจัดการสร้างฐานทัพให้เรียบร้อยก่อน!
+👉 **[คลิกอ่านคู่มือ GitHub 101: การสร้าง Repository แรกของคุณ](./GitHub_Setup_Guide.md)**
+
+### Step 1: เข้าสู่ระบบ (System Override)
+เมื่อมี Repository ของตัวเองแล้ว ให้คลิกที่ป้ายด้านล่างนี้เพื่อดึงไฟล์ "พิมพ์เขียว" (Skeleton Code) ของ Lab 1 ไปเปิดบน Google Colab ของคุณ
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/KMUTT-Lab/DSP01/blob/main/Lab01_HelloDSP.ipynb)
+*(หมายเหตุ: หากขึ้น Error ให้ตรวจสอบว่าคุณได้ Login บัญชี Google เรียบร้อยแล้ว)*
+
+### Step 2: ปฏิบัติการ (Execution)
+1. เมื่อหน้า Colab เปิดขึ้นมา ให้อ่านคำอธิบายใน **Text Cell** อย่างละเอียด
+2. รัน **Code Cell** ทีละบล็อกตามลำดับจากบนลงล่าง (ใช้คีย์ลัด `Shift + Enter`)
+3. ในจุดที่มีคำว่า `### YOUR CODE HERE ###` ให้คุณเติมโค้ด Python เพื่อไขปริศนาให้สมบูรณ์
+4. สังเกตกราฟและเปิดลำโพงเพื่อฟังเสียงผลลัพธ์ที่คุณสร้างขึ้น!
+
+### Step 3: การส่งมอบข้อมูล (Extraction & Submission)
+เมื่อภารกิจเสร็จสิ้น กราฟแสดงผลถูกต้อง และเสียงทำงานปกติ ได้เวลาส่งงานเข้าสู่ระบบส่วนกลาง
+กรุณาทำตามขั้นตอนการบันทึกไฟล์ลง GitHub และส่งลิงก์ผ่านระบบให้ถูกต้องตามมาตรฐาน
+👉 **[คลิกอ่านคู่มือ SOP: ขั้นตอนการส่งงาน DSP Lab อย่างละเอียด](./Submission_SOP.md)**
+
+---
+*หากระบบขัดข้องหรือมีข้อสงสัย ให้เปิด Issue ใน GitHub Repository ของวิชานี้ หรือสอบถามในช่องทางติดต่อส่วนกลาง*
+
+> *"The first wave is generated. The system is listening."*
 > *จัดทำโดย [Living Incognito] - วิชา ICE385 COMPUTER TECHNOLOGY LABORATORY I (Introduction to Digital Signal Processing) - 13 Mar 2026*
