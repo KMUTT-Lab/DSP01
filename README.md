@@ -17,7 +17,7 @@
 
 **Phase 1: การเตรียม Environment**
 1. คลิกที่ปุ่มด้านล่างเพื่อเปิดไฟล์ Jupyter Notebook ของ Lab นี้บน Google Colab
-   [![Open In Colab](https://colab.research.google.com/github/KMUTT-Lab/DSP01/blob/main/Lab01_HelloDSP.ipynb)](ลิงก์ไปยังไฟล์_notebook_ของคุณ)
+   [![Open In Colab](https://colab.research.google.com/github/KMUTT-Lab/DSP01/blob/main/Lab01_HelloDSP.ipynb)]
 2. เมื่อหน้า Colab เปิดขึ้นมา ให้คลิกที่เมนู `File` > `Save a copy in Drive` เพื่อสร้างสำเนาเป็นของตัวเอง
 3. เปลี่ยนชื่อไฟล์สำเนาโดยเพิ่มรหัสนักศึกษาไว้ด้านหน้า เช่น `67XXXXXXX_Lab1_HelloDSP.ipynb`
 
