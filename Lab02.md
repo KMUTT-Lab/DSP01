@@ -1,0 +1,42 @@
+# 🪄 DSP Lab 2: Audio Magic, FFT & The Time-Frequency Rift
+
+ยินดีต้อนรับสู่ภารกิจที่ 2 ของปฏิบัติการ Digital Signal Processing!
+สัปดาห์ที่แล้วเราเป็น "ผู้สร้าง" (Synthesis) แต่สัปดาห์นี้เราจะรับบทเป็น "นักวิเคราะห์" (Analysis) เราจะมาเจาะลึกโครงสร้างของไฟล์เสียงจริง ถอดรหัสคลื่นที่ซับซ้อนให้กลายเป็นส่วนประกอบย่อยๆ และมองเห็นเสียงในรูปแบบของภาพ 2 มิติ
+
+## 🎯 วัตถุประสงค์การเรียนรู้ (Mission Objectives)
+1. สามารถโหลดและจัดการไฟล์เสียง `.wav` ในสภาพแวดล้อมของ Python ได้
+2. พิสูจน์ความแม่นยำของ Fast Fourier Transform (FFT) ผ่านการวิเคราะห์สัญญาณไฟฟ้า (Harmonics)
+3. เข้าใจและสามารถใช้งาน FFT เพื่อวิเคราะห์ความถี่ที่ซ่อนอยู่ในเสียงพูดของมนุษย์
+4. เข้าใจปรากฏการณ์ Spectral Leakage และสามารถแก้ไขได้ด้วยการใช้หน้าต่าง (Windowing Function)
+5. สามารถสร้างและตีความ Spectrogram เพื่อวิเคราะห์ความถี่ที่เปลี่ยนแปลงไปตามเวลาได้
+
+---
+
+## 🚦 ลำดับขั้นตอนการทำภารกิจ (Mission Flow)
+
+### Step 0: เตรียมข้อมูลเป้าหมาย (The Payload)
+ภารกิจนี้ต้องการข้อมูลจริงจากตัวคุณเอง:
+1. ใช้โทรศัพท์มือถือหรือคอมพิวเตอร์ อัดเสียงตัวเองพูดคำว่า *"Digital Signal Processing"* (ความยาว 2-3 วินาที)
+2. บันทึกไฟล์ให้เป็นนามสกุล `.wav` (สามารถใช้เว็บแปลงไฟล์ออนไลน์ได้หากจำเป็น)
+3. เปลี่ยนชื่อไฟล์เป็น `my_voice.wav` เตรียมไว้สำหรับอัปโหลดเข้าสู่ระบบ
+
+### Step 1: เข้าสู่ระบบ (System Override)
+คลิกที่ป้ายสัญลักษณ์ด้านล่างเพื่อดึงไฟล์พิมพ์เขียว (Skeleton Code) ของ Lab 2 ไปเปิดบน Google Colab ของคุณ
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/KMUTT-Lab/DSP/blob/main/Lab02_AudioMagic_V2.0.ipynb)
+
+### Step 2: ปฏิบัติการ (Execution)
+1. เมื่อ Colab เปิดขึ้นมา ให้ทำการอัปโหลดไฟล์ `my_voice.wav` เข้าไปในระบบ (ลากไฟล์ไปวางที่แถบเมนู Files ด้านซ้ายมือ)
+2. รัน Code Cell ทีละบล็อกตามลำดับจากบนลงล่าง
+3. ในจุดที่มีคำว่า `### YOUR CODE HERE ###` ให้คุณเติมโค้ด Python เพื่อไขปริศนาให้สมบูรณ์
+4. สังเกตความเปลี่ยนแปลงของกราฟเมื่อเราใช้เทคนิคขั้นสูงอย่าง Windowing และ Spectrogram
+
+### Step 3: การส่งมอบข้อมูล (Extraction & Submission)
+เมื่อภารกิจเสร็จสิ้น กราฟแสดงผลถูกต้อง และคุณได้ลองพรางเสียงตัวเองเรียบร้อยแล้ว ได้เวลาส่งงานเข้าสู่ระบบส่วนกลาง
+กรุณาทำตามขั้นตอนการบันทึกไฟล์ลง GitHub และส่งลิงก์ผ่านแบบฟอร์มให้ถูกต้อง
+👉 **[คลิกอ่านคู่มือ SOP: ขั้นตอนการส่งงาน DSP Lab อย่างละเอียด](./Submission_SOP.md)**
+
+---
+
+> *"The dimensions of time and frequency are now revealed. Analyze the pattern."*  
+> *จัดทำโดย [Living Incognito] - วิชา ICE385 COMPUTER TECHNOLOGY LABORATORY I (Introduction to Digital Signal Processing) - 19 Mar 2026*
